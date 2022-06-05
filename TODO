@@ -1,0 +1,30 @@
+in locations
+location activity info needs a redesign
+
+make /activety.html
+will conatin:
+ map 
+ description 
+ gallery (maybe)
+ times open
+ phone number
+
+
+make /location.html
+will conatin:
+ map 
+ description 
+ gallery (maybe)
+ times open
+ phone number
+ 
+
+
+ 
+//php api
+//just see /api for data wee need
+//https://stackoverflow.com/questions/383631/json-encode-mysql-results
+
+//not important but cool to have
+
+/admin

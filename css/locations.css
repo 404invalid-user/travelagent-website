@@ -1,0 +1,287 @@
+:root {
+    --check-size: 1rem;
+    --location-info-text-size: .8rem;
+}
+
+body.no-scroll {
+    height: 100%;
+    max-height: 100%;
+    overflow: hidden;
+}
+
+
+/* the google map*/
+
+.map {
+    height: 0;
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.404);
+    align-items: center;
+    justify-content: center;
+    transition: all .7s ease;
+}
+
+.map.expand {
+    height: 100%;
+    max-height: 100%;
+}
+
+.map #close-map {
+    right: 2%;
+    top: 63px;
+    cursor: pointer;
+    color: white;
+    font-weight: 900;
+    font-size: 3.5rem;
+    position: absolute;
+}
+
+.map #close-map:hover {
+    color: rgb(221, 221, 221);
+}
+
+.map iframe {
+    width: 50%;
+    height: 77%;
+    border-radius: 3px;
+    border: 1.1px solid var(--colour-dark-blue);
+    box-shadow: 0px 0px 86px 13px rgba(0, 0, 0, 0.68);
+    -moz-box-shadow: 0px 0px 86px 13px rgba(0, 0, 0, 0.68);
+    -webkit-box-shadow: 0px 0px 86px 13px rgba(0, 0, 0, 0.68);
+}
+
+.grid {
+    gap: 2.3%;
+    width: 85%;
+    margin: auto;
+    display: grid;
+    margin-top: 52px;
+    grid-template-columns: 20% 80%;
+}
+
+
+/* make it mobile friendly ish*/
+
+@media screen and (max-width:669px) {
+    .grid {
+        display: block;
+    }
+}
+
+
+/* add an expand animation to hide it when it doesnt have any content (when user has good internet)*/
+
+@keyframes filter-animation {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.filter {
+    width: 0%;
+    overflow: hidden;
+    animation: filter-animation .5s forwards .2s;
+}
+
+h2 {
+    font-weight: 600;
+    line-height: 100%;
+    font-size: 1.4rem;
+}
+
+.filter>div {
+    border: 1px solid var(--colour-light-grey);
+}
+
+.filter h3 {
+    font-weight: 400;
+    font-size: 1.3rem;
+    padding: 1.1px .2rem;
+    background-color: var(--colour-light-blue);
+    border-bottom: 1px solid var(--colour-light-grey);
+}
+
+.checkbox {
+    display: flex;
+    margin: .3rem;
+    cursor: pointer;
+    user-select: none;
+    align-items: center;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    font-size: var(--check-size);
+}
+
+.checkbox a {
+    margin-left: .3rem;
+    font-size: var(--check-size);
+    color: var(--colour-light-grey);
+}
+
+.checkbox input {
+    display: none;
+}
+
+
+/* ~ will only check the tick inside of the checked box*/
+
+.checkbox input:checked~.checktick svg {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.checktick {
+    position: relative;
+    margin-right: .5rem;
+    border: .1rem solid #000;
+    width: var(--check-size);
+    height: var(--check-size);
+}
+
+.checktick svg {
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    opacity: 0;
+    height: auto;
+    position: absolute;
+    transition: all ease 0.2s;
+    transform: translate(-50%, -50%) scale(0.5);
+}
+
+.checkbox--disabled {
+    color: grey;
+    pointer-events: none;
+}
+
+.checkbox--disabled .checktick {
+    border-color: grey;
+}
+
+.checkbox--disabled .checktick {
+    border-color: grey;
+}
+
+
+/*our basic location info container*/
+
+.locations {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+/* each location*/
+
+.location {
+    width: 99%;
+    margin: 5px 0;
+    display: flex;
+    transition: none;
+    padding: 0.7rem 0;
+    border-radius: 3px;
+    flex-direction: row;
+    border: .9px solid var(--colour-dark-blue);
+}
+
+.location>div:first-child {
+    width: 25%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.location>div:first-child img {
+    width: 70%;
+    border-radius: 2.3px;
+}
+
+
+/* location info location and nights available*/
+
+.location p:first-child {
+    margin: 0.669rem 0 0.4rem;
+}
+
+.location p {
+    margin: 0.4rem 0;
+}
+
+.location p,
+.location p span,
+.location p a {
+    gap: 0.1rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    font-size: var(--location-info-text-size);
+}
+
+.location p img {
+    width: var(--location-info-text-size);
+    height: var(--location-info-text-size);
+}
+
+.activitie {
+    height: 30px;
+}
+
+.activitie>p {
+    cursor: pointer;
+}
+
+.activitie-details {
+    opacity: 0;
+    width: 30%;
+    z-index: 3;
+    display: none;
+    overflow: hidden;
+    position: absolute;
+    border-radius: 9px;
+    padding: 2.5px 2px;
+    background: rgb(248, 248, 248);
+}
+
+.activitie:hover .activitie-details,
+.activitie-details:hover {
+    opacity: 1;
+    display: flex;
+}
+
+.activitie-details>div {
+    width: 60%;
+    margin: 0.2%;
+}
+
+.activitie-details>div a {
+    font-size: .9rem;
+}
+
+.activitie-details>div:first-child {
+    width: 40%;
+}
+
+.activitie-details img {
+    width: 100%;
+}
+
+.activitie-details h3 {
+    font-size: 1rem;
+    background: transparent;
+}
+
+a.m {
+    cursor: pointer;
+    margin-left: 0.2rem;
+}

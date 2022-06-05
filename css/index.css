@@ -1,0 +1,173 @@
+    /* hero */
+    
+    @keyframes floatup {
+        from {
+            opacity: 0;
+            transform: translateY(100px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+    
+    .hero {
+        height: 80vh;
+        display: flex;
+        padding: 0 2%;
+        color: white;
+        min-height: 421px;
+        padding-top: 93px;
+        position: relative;
+        flex-direction: column;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/assignment-2-website/images/hero-background.jpg');
+    }
+    
+    .hero h1 {
+        opacity: 0;
+        font-size: 4.5rem;
+        margin-top: 6.3rem;
+        animation: floatup 1.3s forwards .2s;
+    }
+    
+    .hero h2 {
+        opacity: 0;
+        max-width: 50%;
+        font-weight: 600;
+        font-size: 2.6rem;
+        animation: floatup 1.3s forwards .3s;
+    }
+    
+    .search {
+        width: 52%;
+        bottom: -46px;
+        display: flex;
+        position: absolute;
+        align-items: center;
+        border-radius: 27px;
+        flex-direction: row;
+        justify-content: center;
+        background: var(--colour-light-blue);
+    }
+    
+    .search .terms {
+        gap: 42px;
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .search .terms p {
+        color: black;
+        font-size: 1rem;
+        font-weight: 400;
+        margin-left: 4px;
+    }
+    
+    .search .btn-wrap {
+        width: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .search .btn-wrap .search-button {
+        gap: 3px;
+        display: flex;
+        border: none;
+        height: 40px;
+        width: 108px;
+        border-radius: 17px;
+        align-items: center;
+        justify-content: center;
+        background: var(--colour-dark-blue);
+    }
+    
+    .search .btn-wrap .search-button img {
+        height: 50%;
+    }
+    /* error and success message popup*/
+    
+    .message-wrap {
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .message {
+        top: 61px;
+        opacity: 0;
+        z-index: 2;
+        display: flex;
+        text-align: center;
+        padding: 10px 14px;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        transition: all .3s ease;
+    }
+    
+    .message.ok {
+        opacity: 1;
+        color: black;
+        background-color: rgb(0, 255, 0);
+    }
+    
+    .message.error {
+        opacity: 1;
+        display: flex;
+        color: white;
+        background-color: rgb(255, 0, 0);
+    }
+    
+    a.link {
+        color: var(--colour-darklight-blue);
+    }
+    
+    a.link:hover {
+        color: var(--colour-darklight-blue-hov);
+    }
+    
+    .stars img {
+        width: 20px;
+        height: 20px;
+    }
+    
+    @media screen and (max-width:669px) {
+        .hero {
+            height: 60vh;
+        }
+        .search {
+            margin: 0;
+            width: 92%;
+            padding: 0.5rem 0.4rem 0 0.4rem;
+            flex-direction: column;
+        }
+        .search .terms {
+            justify-content: center;
+        }
+        .search .btn-wrap {
+            width: 90%;
+            display: flex;
+            align-items: center;
+            margin-top: 0.4rem;
+            justify-content: center;
+            padding: 3px;
+        }
+        .search .btn-wrap .search-button {
+            width: 166px;
+            height: 47px;
+        }
+        .hero h1 {
+            margin-top: 2.3rem;
+            font-size: 4rem;
+        }
+        .hero h2 {
+            max-width: 100%;
+            font-size: 1.6rem;
+            margin-top: 1.7rem;
+        }
+    }

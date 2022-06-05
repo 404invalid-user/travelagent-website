@@ -1,0 +1,82 @@
+h1 {
+    margin: 86px 0 0;
+    font-weight: 300;
+    text-align: center;
+}
+
+.gallery {
+    gap: .8rem;
+    display: grid;
+    margin: 1.5rem;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.item {
+    min-height: 200px;
+    position: relative;
+    background-color: gray;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.item .info {
+    left: 0;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    display: flex;
+    color: white;
+    overflow: hidden;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    transition: all 1s ease;
+    border-radius: 12px 12px 0 0;
+    background-color: rgba(0, 0, 0, 0.493);
+}
+
+.item:hover .info {
+    height: 65%;
+}
+
+.item .content {
+    width: 95%;
+    height: 100%;
+}
+
+.stars {
+    margin: 5px 3px;
+}
+
+.item .content h2 {
+    margin-top: 1.4%;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.item .content .btns {
+    display: flex;
+    justify-content: center;
+}
+
+.item .content a {
+    color: white;
+    font-size: 1rem;
+    padding: 5px 26px;
+    align-items: center;
+    display: inline-flex;
+    text-decoration: none;
+    border-radius: 0.2rem;
+    letter-spacing: 0.06rem;
+    justify-content: center;
+    background: rgba(185, 185, 185, 0.397);
+}
+
+.item .content a:hover {
+    background: rgba(165, 165, 165, 0.582);
+}
+
+.grid-span-2 {
+    grid-row: span 2;
+    grid-column: span 2;
+}

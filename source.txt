@@ -1,0 +1,9 @@
+logo - none
+
+star - https://commons.wikimedia.org/wiki/File:star.svg
+
+locations filter design - https://tui.co.uk
+
+signup/lgin design - WHMCS
+
+hamburger icon - https://codepen.io/pranjal9599/pen/yJRNoL

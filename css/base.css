@@ -1,0 +1,225 @@
+:root {
+    --colour-bitblack: #333;
+    --colour-dark-blue: #3395D6;
+    --colour-dark-grey: #969696;
+    --colour-light-blue: #C2DFF3;
+    --colour-darklight-blue: rgb(69, 164, 228);
+    --colour-darklight-blue-hov: rgb(50, 146, 209);
+    --colour-light-grey: rgb(180, 180, 180);
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-width: 100%;
+    font-size: 16px;
+    max-width: 100%;
+    min-height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+/* seting font size and styling text*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+p,
+a {
+    margin: 0;
+    padding: 0;
+    font-size: 1.3rem;
+}
+
+
+/* margin of 2% on left and right */
+
+
+/* nav bar */
+
+nav,
+nav .bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+/* animate nav bar */
+
+@keyframes nav-animation {
+    from {
+        height: 0;
+    }
+    to {
+        height: 45px;
+    }
+}
+
+
+/* The element to apply the animation to */
+
+nav {
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 45px;
+    min-width: 100%;
+    max-width: 100%;
+    position: fixed;
+    padding: 5px 0;
+    overflow: hidden;
+    background: white;
+    transition: all 1s ease;
+    animation-duration: 1.3s;
+    border-bottom: .9px white;
+    animation-name: nav-animation;
+}
+
+nav .mobile-toggle {
+    display: none;
+}
+
+nav.scroll {
+    border-bottom: .9px solid var(--colour-dark-blue);
+}
+
+nav img {
+    width: 73px;
+    height: 46px;
+    margin-left: 2%;
+}
+
+nav .bar {
+    gap: 30px;
+    margin: 0 2% 0 auto;
+}
+
+nav a {
+    font-weight: 500;
+    color: #414141;
+    text-decoration: none;
+    transition: all .4s ease;
+}
+
+nav a:hover,
+nav a.select {
+    color: #000000;
+    text-decoration: none;
+}
+
+nav .nav-title {
+    margin: 5px;
+    font-size: 2rem;
+}
+
+.drop-down-menu {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+}
+
+.toggle-icon {
+    font-weight: 800;
+}
+
+.icon-1,
+.icon-2,
+.icon-3 {
+    position: absolute;
+    left: 25%;
+    top: 50%;
+    width: 32px;
+    height: 3px;
+    background-color: black;
+    transition: all 400ms cubic-bezier(0.84, 0.06, 0.52, 1.8);
+}
+
+.icon-1 {
+    transform: translateY(-8px);
+    animation-delay: 100ms;
+}
+
+.icon-3 {
+    transform: translateY(8px);
+    animation-delay: 250ms;
+}
+
+.hamburger-icon {
+    display: none;
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
+}
+
+.hamburger-icon:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+}
+
+.icon-1.a {
+    transform: rotate(40deg);
+}
+
+.icon-3.b {
+    transform: rotate(-40deg);
+}
+
+.icon-2.c {
+    opacity: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+@media screen and (max-width:669px) {
+    nav {
+        overflow: visible;
+        animation: none;
+    }
+    .hamburger-icon {
+        display: block;
+    }
+    nav .mobile-toggle {
+        display: block;
+    }
+    nav .bar {
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        top: 55px;
+        background-color: white;
+        margin: 0;
+        /* height: 100%; */
+        width: 76%;
+        /* height: 90vh; */
+        height: calc(100vh - 46px);
+    }
+}

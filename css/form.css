@@ -1,0 +1,121 @@
+body,
+html {
+    background: var(--colour-darklight-blue-hov);
+    color: black;
+}
+
+.form-wrap {
+    display: flex;
+    margin-top: 20vh;
+    margin-bottom: 45px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+form {
+    width: 300px;
+    display: flex;
+    color: black;
+    max-width: 100%;
+    padding: 20px 45px;
+    border-radius: 10px;
+    flex-direction: column;
+    background-color: white;
+}
+
+form.contat-form {
+    width: 500px;
+    max-width: 100%;
+}
+
+form h1 {
+    font-weight: 500;
+    font-size: 2.8rem;
+}
+
+form label {
+    margin-left: 3.7px;
+    margin-top: 10px;
+}
+
+input,
+textarea,
+select {
+    outline: none;
+    box-shadow: none;
+    border-radius: 6px;
+    padding: 5.8px 7px;
+    outline-style: none;
+    border-color: transparent;
+    border: 0.7px solid var(--colour-darklight-blue);
+}
+
+input.error,
+textarea.error,
+select.error {
+    border: 1px solid red;
+}
+
+input:focus,
+select:focus {
+    box-shadow: 0px 0px 4px 2px rgb(0 0 0 / 27%);
+    box-shadow: 0px 0px 4px 2px rgb(0 0 0 / 26%);
+    -webkit-box-shadow: 0px 0px 4px 2px rgb(0 0 0 / 26%);
+    -moz-box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.56);
+}
+
+input[type="submit"] {
+    height: auto;
+    border: none;
+    display: flex;
+    color: white;
+    cursor: pointer;
+    margin: 14px auto;
+    padding: 7px 20px;
+    border-radius: 9px;
+    align-items: center;
+    max-width: fit-content;
+    justify-content: center;
+    background-color: var(--colour-darklight-blue);
+}
+
+input[type="submit"]:hover {
+    background-color: var(--colour-darklight-blue-hov);
+}
+
+input[type="submit"]:disabled {
+    color: black;
+    cursor: not-allowed;
+    background: #cecece;
+}
+
+.h-captcha {
+    display: flex;
+    align-items: center;
+    margin: 11px 0 0 0;
+    justify-content: center;
+}
+
+.form-wrap a {
+    margin: 12px;
+    font-size: .9rem;
+    text-decoration: none;
+    color: rgb(27, 27, 27);
+}
+
+.form-wrap a:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+a.err {
+    color: red;
+    margin: -3px 2px;
+    font-size: .8rem;
+}
+
+a.err:hover {
+    color: red;
+    text-decoration: none;
+}
